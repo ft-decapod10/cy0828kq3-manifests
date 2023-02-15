@@ -1,0 +1,8 @@
+# Source: cluster-api-aws/templates/machine-deployment.yaml
+apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+kind: EKSConfigTemplate
+metadata:
+  name: cy0828kq3-eks-md-normal
+  namespace: cy0828kq3
+spec:
+  template: {}

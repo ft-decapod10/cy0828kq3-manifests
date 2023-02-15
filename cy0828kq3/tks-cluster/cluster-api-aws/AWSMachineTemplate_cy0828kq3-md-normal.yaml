@@ -1,0 +1,22 @@
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+kind: AWSMachineTemplate
+metadata:
+  name: cy0828kq3-md-normal
+  namespace: cy0828kq3
+spec:
+  template:
+    spec:
+      iamInstanceProfile: nodes.cluster-api-provider-aws.sigs.k8s.io
+      instanceType: t3.large
+      sshKeyName: tks-seoul
+      rootVolume:
+        size: 50
+        type: gp2
+      subnet:
+        filters:
+        - name: "tag:sigs.k8s.io/cluster-api-provider-aws/role"
+          values:
+          - "private"
+        - name: "tag:Name"
+          values:
+          - "*cy0828kq3*"

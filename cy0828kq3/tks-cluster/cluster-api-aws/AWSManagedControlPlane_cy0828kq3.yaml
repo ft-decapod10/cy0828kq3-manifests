@@ -1,0 +1,19 @@
+# Source: cluster-api-aws/templates/aws-managed-control-plane.yaml
+apiVersion: controlplane.cluster.x-k8s.io/v1beta2
+kind: AWSManagedControlPlane
+metadata:
+  name: cy0828kq3
+  namespace: cy0828kq3
+spec:
+  eksClusterName: cy0828kq3
+  region: ap-northeast-2
+  sshKeyName: tks-seoul
+  version: v1.22.5
+  addons:
+    - conflictResolution: overwrite
+      name: aws-ebs-csi-driver
+      serviceAccountRoleARN: arn:aws:iam::482246953094:role/AmazonEKS_EBS_CSI_DriverRole_cy0828kq3
+      version: v1.15.0-eksbuild.1
+    - conflictResolution: overwrite
+      name: vpc-cni
+      version: v1.10.1-eksbuild.1

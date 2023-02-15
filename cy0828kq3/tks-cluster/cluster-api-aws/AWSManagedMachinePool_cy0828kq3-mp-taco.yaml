@@ -1,0 +1,15 @@
+# Source: cluster-api-aws/templates/machine-pool.yaml
+apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+kind: AWSManagedMachinePool
+metadata:
+  name: cy0828kq3-mp-taco
+  namespace: cy0828kq3
+spec:
+  eksNodegroupName: cy0828kq3-mp-taco
+  instanceType: t3.2xlarge
+  diskSize: 200
+  scaling:
+    maxSize: 16
+    minSize: 1
+  remoteAccess:
+    sshKeyName: tks-seoul

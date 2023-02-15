@@ -1,0 +1,15 @@
+# Source: cluster-api-aws/templates/cluster.yaml
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Cluster
+metadata:
+  name: cy0828kq3
+  namespace: cy0828kq3
+spec:
+  infrastructureRef:
+    apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
+    kind: AWSManagedCluster
+    name: cy0828kq3
+  controlPlaneRef:
+    apiVersion: controlplane.cluster.x-k8s.io/v1beta2
+    kind: AWSManagedControlPlane
+    name: cy0828kq3
